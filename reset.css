@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 20px;
+	font-family: 'hiraginosansgb w3','Helvetica Neue',Helvetica,'microsoft yahei',Arial,sans-serif;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+img {
+	display: block;
+}

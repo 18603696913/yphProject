@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="libs/angular.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="libs/angular-route.js" type="text/javascript" charset="utf-8"></script>	
+		<script src="libs/angular-css.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<style type="text/css">
+			body{
+				height: 100%;
+				/*background-color: #ccc;*/
+			}
+			.index-nav{
+			 	position: fixed;
+			 	left: 0;
+			 	right: 0;
+			 	bottom: 0;
+			}
+			.index-nav ul{
+			 	display: flex;			 	
+			 	justify-content: space-around;
+			 	align-items: center;
+			}
+			.index-nav li{
+			 	border-right: 1px solid transparent;
+			 	text-align: center;
+			 	width: 20%;
+			}
+			.index-nav li:nth-of-type(5){
+			 	border-right:none
+			}	
+			.index-nav img{
+				width: 100%;				
+			}
+			
+		</style>
+	</head>
+	<body ng-app="myApp">
+		
+		<nav class="index-nav">
+			<ul>
+				<li><a href="#/"><img src="http://m.ugoshop.com/themes/ugo/images/3-37H5/public/nav_index.png?t=201608182231" alt="" /></a></li>
+				<li><a href="#/zt"><img src="http://m.ugoshop.com/themes/ugo/images/3-37H5/public/nav_special.png?t=201608182231" alt="" /></a></li>
+				<li><a href="#/sp"><img src="http://m.ugoshop.com/themes/ugo/images/3-37H5/public/nav_tv.png?t=201608182231" alt="" /></a></li>
+				<li><a href="#/gwc"><img src="http://m.ugoshop.com/themes/ugo/images/3-37H5/public/nav_cart.png?t=201608182231" alt="" /></a></li>
+				<li><a href="#/mine"><img src="http://m.ugoshop.com/themes/ugo/images/3-37H5/public/nav_my.png?t=201608182231" alt="" /></a></li>
+			</ul>
+		</nav>
+		
+		<div ng-view></div>
+	</body>
+	<script type="text/javascript">
+		
+		var app = angular.module('myApp', ['ngRoute', 'angularCSS']);
+		
+		app.config(['$routeProvider', function ($routeProvider) {
+			$routeProvider.when('/',{
+//				templateUrl: './home/html/home.html',
+//				controller : 'homeCtrl'
+			})
+			.otherwise({
+				redirectTo : '/'
+			});
+		}])
+		
+	</script>
+</html>
